@@ -1,0 +1,17 @@
+/.vs/Nully/v14/*.suo
+/Core.Input/*.vcxproj
+/Core.Input/*.filters
+/Core.Input/Debug/*.log
+/Core.Input/Debug/Core.Input.tlog/*.tlog
+/Core.Input/Debug/*.obj
+/Core.Input/Debug/*.idb
+/Core.Input/Debug/*.pdb
+/Core.Input/x64/Debug/*.log
+/Core.Input/x64/Debug/Core.Input.tlog/*.tlog
+/Core.Input/x64/Debug/*.pdb
+/Core.Input/x64/Debug/Core.Input.tlog/*.lastbuildstate
+/Core.Input/Debug/Core.Input.tlog/*.lastbuildstate
+/Core.Input/x64/Debug/*.obj
+/Core.Input/x64/Debug/*.idb
+/Core/*.vcxproj
+/Core/*.filters
