@@ -22,3 +22,4 @@
 #include "CString.h"
 #include "CFileManager.h"
 #include "CSmartPointer.h"
+#include "CRandom.h"

@@ -38,38 +38,26 @@ namespace Nully
       this->rows[3] = a_matrix.rows[3];
     }
     
-    CVector4 CMatrix4x4::GetRow(uchar_c a_index)
+    CVector4& CMatrix4x4::GetRow(uchar_c a_index)
     {
       if (a_index > 3)
       {
         a_index = 3;
       }
 
-      float_c* p = &m_00;
-      p += (4 * a_index);
-
-      CVector4 tmp = CVector4();
-      tmp.x = *p;
-      tmp.y = *(p+1);
-      tmp.z = *(p+2);
-      tmp.w = *(p+3);
-
-      return tmp;
+      return rows[a_index];
     }
-    void CMatrix4x4::SetRow(uchar_c a_index, const CVector4 & row)
+    void CMatrix4x4::SetRow(uchar_c a_index, const CVector4 & a_row)
     {
       if (a_index > 3)
       {
         a_index = 3;
       }
 
-      float_c* p = &m_00;
-      p += (4 * a_index);
-
-      *p = row.x;
-      *(p+1) = row.y;
-      *(p + 2) = row.z;
-      *(p + 3) = row.w;
+      rows[a_index].x = a_row.x;
+      rows[a_index].y = a_row.y;
+      rows[a_index].z = a_row.z;
+      rows[a_index].w = a_row.w;
     }
     void CMatrix4x4::operator=(const CMatrix4x4 & a_matrix)
     {
@@ -183,4 +171,52 @@ Nully::Math::CMatrix4x4 operator*(const Nully::Math::CMatrix4x4& a_matrix1, cons
   };
 
   return matrix;
+}
+
+Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector3& a_vector)
+{
+  Nully::Math::CVector4 result;
+
+  result.x = a_matrix.m_00 * a_vector.x + a_matrix.m_01 * a_vector.y + a_matrix.m_02 * a_vector.z + a_matrix.m_03 * 1.0f;
+  result.y = a_matrix.m_10 * a_vector.x + a_matrix.m_11 * a_vector.y + a_matrix.m_12 * a_vector.z + a_matrix.m_13 * 1.0f;
+  result.z = a_matrix.m_20 * a_vector.x + a_matrix.m_21 * a_vector.y + a_matrix.m_22 * a_vector.z + a_matrix.m_23 * 1.0f;
+  result.w = a_matrix.m_30 * a_vector.x + a_matrix.m_31 * a_vector.y + a_matrix.m_32 * a_vector.z + a_matrix.m_33 * 1.0f;
+
+  return result;
+}
+
+Nully::Math::CVector4 operator*(const Nully::Math::CVector3& a_vector, const Nully::Math::CMatrix4x4& a_matrix)
+{
+  Nully::Math::CVector4 result;
+
+  result.x = a_matrix.m_00 * a_vector.x + a_matrix.m_01 * a_vector.y + a_matrix.m_02 * a_vector.z + a_matrix.m_03 * 1.0f;
+  result.y = a_matrix.m_10 * a_vector.x + a_matrix.m_11 * a_vector.y + a_matrix.m_12 * a_vector.z + a_matrix.m_13 * 1.0f;
+  result.z = a_matrix.m_20 * a_vector.x + a_matrix.m_21 * a_vector.y + a_matrix.m_22 * a_vector.z + a_matrix.m_23 * 1.0f;
+  result.w = a_matrix.m_30 * a_vector.x + a_matrix.m_31 * a_vector.y + a_matrix.m_32 * a_vector.z + a_matrix.m_33 * 1.0f;
+
+  return result;
+}
+
+Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector4& a_vector)
+{
+  Nully::Math::CVector4 result;
+
+  result.x = a_matrix.m_00 * a_vector.x + a_matrix.m_01 * a_vector.y + a_matrix.m_02 * a_vector.z + a_matrix.m_03 * a_vector.w;
+  result.y = a_matrix.m_10 * a_vector.x + a_matrix.m_11 * a_vector.y + a_matrix.m_12 * a_vector.z + a_matrix.m_13 * a_vector.w;
+  result.z = a_matrix.m_20 * a_vector.x + a_matrix.m_21 * a_vector.y + a_matrix.m_22 * a_vector.z + a_matrix.m_23 * a_vector.w;
+  result.w = a_matrix.m_30 * a_vector.x + a_matrix.m_31 * a_vector.y + a_matrix.m_32 * a_vector.z + a_matrix.m_33 * a_vector.w;
+
+  return result;
+}
+
+Nully::Math::CVector4 operator*(const Nully::Math::CVector4& a_vector, const Nully::Math::CMatrix4x4& a_matrix)
+{
+  Nully::Math::CVector4 result;
+
+  result.x = a_matrix.m_00 * a_vector.x + a_matrix.m_01 * a_vector.y + a_matrix.m_02 * a_vector.z + a_matrix.m_03 * a_vector.w;
+  result.y = a_matrix.m_10 * a_vector.x + a_matrix.m_11 * a_vector.y + a_matrix.m_12 * a_vector.z + a_matrix.m_13 * a_vector.w;
+  result.z = a_matrix.m_20 * a_vector.x + a_matrix.m_21 * a_vector.y + a_matrix.m_22 * a_vector.z + a_matrix.m_23 * a_vector.w;
+  result.w = a_matrix.m_30 * a_vector.x + a_matrix.m_31 * a_vector.y + a_matrix.m_32 * a_vector.z + a_matrix.m_33 * a_vector.w;
+
+  return result;
 }

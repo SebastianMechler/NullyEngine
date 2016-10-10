@@ -57,8 +57,8 @@ namespace Nully
       /// @param a_offset: Offset which will be added after the position has been set.
       void SetFilePosition(const EFilePosition a_position, const int64_c a_offset = 0) const;
 
-      /// @brief Opens a file to obtain the file-size
-      /// @param path: path to the file as tchar_c string
+      /// @brief Opens a file to obtain the file-size.
+      /// @param path: path to the file as tchar_c string.
       static uint64_c GetFileSize(const tchar_c* a_path);
 
     private:

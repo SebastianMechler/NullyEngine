@@ -22,6 +22,7 @@
     <ClCompile Include="CFileManager.cpp" />
     <ClCompile Include="CMatrix4x4.cpp" />
     <ClCompile Include="CProcess.cpp" />
+    <ClCompile Include="CRandom.cpp" />
     <ClCompile Include="CSocket.cpp" />
     <ClCompile Include="CStringA.cpp" />
     <ClCompile Include="CStringW.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="CMatrix4x4.h" />
     <ClInclude Include="CProcess.h" />
     <ClInclude Include="CProcess.hpp" />
+    <ClInclude Include="CRandom.h" />
     <ClInclude Include="CSmartPointer.h" />
     <ClInclude Include="CSmartPointer.hpp" />
     <ClInclude Include="CSocket.h" />
