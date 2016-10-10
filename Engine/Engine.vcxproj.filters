@@ -80,6 +80,9 @@
     <ClCompile Include="CVector4.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
+    <ClCompile Include="CWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datatypes.h">
@@ -147,6 +150,12 @@
     </ClInclude>
     <ClInclude Include="SProcessData.h">
       <Filter>Header Files\Hacking</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindow.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

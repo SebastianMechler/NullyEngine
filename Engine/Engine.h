@@ -8,6 +8,9 @@
 #include "CVector3.h"
 #include "CMatrix4x4.h"
 
+// Graphics
+#include "CWindow.h"
+
 // Network
 #include "CSocket.h"
 

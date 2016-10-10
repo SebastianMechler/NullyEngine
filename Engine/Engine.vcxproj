@@ -27,6 +27,7 @@
     <ClCompile Include="CStringW.cpp" />
     <ClCompile Include="CVector3.cpp" />
     <ClCompile Include="CVector4.cpp" />
+    <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +43,7 @@
     <ClInclude Include="CStringW.h" />
     <ClInclude Include="CVector3.h" />
     <ClInclude Include="CVector4.h" />
+    <ClInclude Include="CWindow.h" />
     <ClInclude Include="Datatypes.h" />
     <ClInclude Include="EAllocationType.h" />
     <ClInclude Include="ECoreResult.h" />
@@ -52,6 +54,7 @@
     <ClInclude Include="ISocket.h" />
     <ClInclude Include="NetworkTypes.h" />
     <ClInclude Include="SProcessData.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{321B82F1-014C-418C-AA33-90ED944ADAB9}</ProjectGuid>
