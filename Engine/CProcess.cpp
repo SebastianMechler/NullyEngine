@@ -181,7 +181,8 @@ namespace Nully
         }
         char buffer[2000];
 
-        sprintf(buffer, "PID: [%5i] => %s", it->id, it->name.GetCString());
+        sprintf_s(buffer, "PID: [%5i] => %s", it->id, it->name.GetCString());
+        //sprintf(buffer, "PID: [%5i] => %s", it->id, it->name.GetCString());
 
         //fileManager.Write(it->name.GetCString(), it->name.GetLength());
         fileManager.Write(buffer, strlen(buffer));
