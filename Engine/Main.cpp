@@ -2,7 +2,8 @@
 
 using namespace Nully::Math;
 using namespace Nully::Graphics;
-
+using namespace Nully::Level;
+using namespace std;
 
 void InitWindow()
 {
@@ -27,11 +28,24 @@ void InitWindow()
 	CWindow::DestroyInstance();
 }
 
+void TestMaze()
+{
+	CMazeDepthFirst maze;
+	SMazeParams params;
+	params.width = 10;
+	params.height = 10;
+	params.seed = 1337;
+	maze.Generate(params);
+	maze.ShowDebugMaze("o", ".");
+
+	cout << endl << endl;
+}
+
 void main()
 {
   CMatrix4x4 matrix = CMatrix4x4::identity;
 
+	TestMaze();
 	InitWindow();
-
 }
 

@@ -30,6 +30,7 @@
     <ClCompile Include="CVector4.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MazeDepthFirst.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CFileManager.h" />
@@ -54,9 +55,15 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EProtectionType.h" />
     <ClInclude Include="ISocket.h" />
+    <ClInclude Include="MathUtility.h" />
+    <ClInclude Include="MazeDepthFirst.h" />
     <ClInclude Include="NetworkTypes.h" />
     <ClInclude Include="SProcessData.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Vec2.hpp" />
+    <ClInclude Include="Vec3.h" />
+    <ClInclude Include="Vec3.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{321B82F1-014C-418C-AA33-90ED944ADAB9}</ProjectGuid>

@@ -10,7 +10,7 @@
 #include <DirectXMath.h>
 #include <DirectXColors.h>
 
-// STL includes
+// C++ includes
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -19,4 +19,7 @@
 #include <list>
 #include <queue>
 #include <map>
+#include <stack>
+#include <cassert>
+
 

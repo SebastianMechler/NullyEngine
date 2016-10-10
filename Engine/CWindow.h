@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+#include "Engine.h"
 
 namespace Nully
 {
@@ -8,10 +8,10 @@ namespace Nully
 		struct SWindowParams
 		{
 			HINSTANCE hInstance;
-			const char* pTitle;
-			const char* pClassName;
-			int width;
-			int height;
+			const char_c* pTitle;
+			const char_c* pClassName;
+			uint32_c width;
+			uint32_c height;
 		};
 
 		class CWindow
@@ -32,7 +32,7 @@ namespace Nully
 			CWindow(const SWindowParams& params);
 			virtual ~CWindow();
 			void ProcessMessages();
-			bool GetQuit() { return m_quit; }
+			bool_c GetQuit() { return m_quit; }
 
 		private:
 			static CWindow* m_pInstance;
