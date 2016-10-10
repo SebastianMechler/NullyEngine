@@ -62,3 +62,5 @@
 /Core/bin/Debug/Win32/*.pdb
 /Core/bin/Debug/x64/*.lib
 /Core/bin/Debug/x64/*.pdb
+/Engine/intermediate
+/Engine/bin
