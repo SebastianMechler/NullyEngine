@@ -1,4 +1,4 @@
-#include "Core\CVector3.h"
+#include "CVector3.h"
 
 namespace Nully
 {

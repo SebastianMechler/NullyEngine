@@ -1,4 +1,4 @@
-#include "include\Core\CFileManager.h"
+#include "CFileManager.h"
 
 namespace Nully
 {

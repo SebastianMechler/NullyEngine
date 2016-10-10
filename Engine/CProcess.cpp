@@ -1,5 +1,5 @@
-#include "include\Core\CProcess.h"
-#include "include\Core\CFileManager.h"
+#include "CProcess.h"
+#include "CFileManager.h"
 
 namespace Nully
 {

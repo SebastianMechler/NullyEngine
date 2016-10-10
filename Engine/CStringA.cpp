@@ -1,61 +1,61 @@
-#include "Core\CStringW.h"
+#include "CStringA.h"
 
 namespace Nully
 {
   namespace Tools
   {
     // Constructor 
-    CStringW::CStringW()
+    CStringA::CStringA()
       : m_data(nullptr)
     {
     }
 
-    CStringW::CStringW(const wchar_c* a_string)
+    CStringA::CStringA(const char_c* a_string)
       : m_data(nullptr)
     {
-      AssignWString(a_string);
+      AssignCString(a_string);
     }
 
     // Move Constructor (lvalue) 
-    CStringW::CStringW(const CStringW& a_string)
+    CStringA::CStringA(const CStringA& a_string)
       : m_data(nullptr)
     {
-      AssignWString(a_string.GetCString());
+      AssignCString(a_string.GetCString());
     }
 
-    void CStringW::operator=(const wchar_c * a_string)
+    void CStringA::operator=(const char_c * a_string)
     {
-      AssignWString(a_string);
+      AssignCString(a_string);
     }
 
-    void CStringW::operator=(const CStringW& a_string)
+    void CStringA::operator=(const CStringA& a_string)
     {
-      AssignWString(a_string.GetCString());
+      AssignCString(a_string.GetCString());
     }
 
-    CStringW CStringW::operator+(const CStringW & a_string) const
+    CStringA CStringA::operator+(const CStringA & a_string) const
     {
       return operator+(a_string.GetCString());
     }
 
-    CStringW CStringW::operator+(const wchar_c * a_string) const
+    CStringA CStringA::operator+(const char_c * a_string) const
     {
       size_c str1_length = 0;
       size_c str2_length = 0;
       size_c str_totalLength = 0;
       auto pStr2 = a_string;
-      CStringW concatString;
-      
+      CStringA concatString;
+
       // get str-length of string1
       if (this->m_data != nullptr)
       {
-        str1_length = wcslen(m_data);
+        str1_length = strlen(m_data);
       }
 
       // get str-length of string2
       if (pStr2 != nullptr)
       {
-        str2_length = wcslen(pStr2);
+        str2_length = strlen(pStr2);
       }
 
       str_totalLength = str1_length + str2_length + 1; // + 1 for nulltermination
@@ -73,7 +73,7 @@ namespace Nully
       }
 
       // reserve bytes
-      wchar_c* pBuffer = concatString.ReserveWideBytes(str_totalLength);
+      char_c* pBuffer = concatString.ReserveBytes(str_totalLength);
 
       // memcpy bytes from string1 into buffer and then memcpy string2 into buffer
       size_c offset = 0;
@@ -98,7 +98,7 @@ namespace Nully
       return concatString;
     }
 
-    void CStringW::operator+=(const CStringW & a_string)
+    void CStringA::operator+=(const CStringA & a_string)
     {
       size_c str1_length = 0;
       size_c str2_length = 0;
@@ -108,13 +108,13 @@ namespace Nully
       // get str-length of string1
       if (this->m_data != nullptr)
       {
-        str1_length = wcslen(m_data);
+        str1_length = strlen(m_data);
       }
 
       // get str-length of string2
       if (pStr2 != nullptr)
       {
-        str2_length = wcslen(pStr2);
+        str2_length = strlen(pStr2);
       }
 
       str_totalLength = str1_length + str2_length + 1; // + 1 for nulltermination
@@ -124,7 +124,7 @@ namespace Nully
       }
 
       // reserve bytes
-      wchar_c* pBuffer = ReserveWideBytes(str_totalLength);
+      char_c* pBuffer = ReserveBytes(str_totalLength);
 
       // memcpy bytes from string1 into buffer and then memcpy string2 into buffer
       size_c offset = 0;
@@ -149,20 +149,20 @@ namespace Nully
       m_data = pBuffer;
     }
 
-    wchar_c CStringW::operator[](const size_c a_position) const
+    char_c CStringA::operator[](const size_c a_position) const
     {
       return CharacterAt(a_position);
     }
 
-    wchar_c CStringW::CharacterAt(const size_c a_position) const
+    char_c CStringA::CharacterAt(const size_c a_position) const
     {
       if (this->m_data == nullptr)
       {
         return 0;
       }
-      
+
       // get length
-      auto length = std::wcslen(this->m_data);
+      auto length = std::strlen(this->m_data);
 
       if (length == 0)
         return 0;
@@ -175,13 +175,13 @@ namespace Nully
         return 0;
 
       // create pointer and increment by position
-      wchar_c* index = this->m_data;
+      char_c* index = this->m_data;
       index += a_position;
 
       return *index;
     }
 
-    size_c CStringW::GetLength() const
+    size_c CStringA::GetLength() const
     {
       if (this->m_data == nullptr)
       {
@@ -189,11 +189,11 @@ namespace Nully
       }
       else
       {
-        return std::wcslen(this->m_data);
+        return std::strlen(this->m_data);
       }
     }
 
-    int32_c CStringW::Find(const wchar_c a_character) const
+    int32_c CStringA::Find(const char_c a_character) const
     {
       // loop through data
       // check if character is equal
@@ -202,7 +202,7 @@ namespace Nully
         return -1;
       }
 
-      wchar_c* pChar = m_data;
+      char_c* pChar = m_data;
       int32_c pos = 0;
       while (*pChar != '\0')
       {
@@ -217,31 +217,67 @@ namespace Nully
       return -1;
     }
 
-    wchar_c * CStringW::GetCString() const
+    char_c * CStringA::GetCString() const
     {
       return this->m_data;
     }
 
-    CStringW::~CStringW()
+    CStringA::~CStringA()
     {
       this->Clear();
     }
 
-    inline wchar_c * CStringW::ReserveWideBytes(const size_c a_size) const
+    int32_c CStringA::FindLast(const char_c * a_cString, const char_c a_character)
     {
-      return new wchar_c[a_size]();
+      if (a_cString == nullptr)
+      {
+        return -1;
+      }
+
+      int32_c strLength = strlen(a_cString);
+
+      for (int i = strLength; i > 0; i--)
+      {
+        if (a_cString[i] == a_character)
+        {
+          return i;
+        }
+      }
+
+      return -1;
     }
 
-    inline void CStringW::AssignWString(const wchar_c* a_string)
+    void CStringA::ExtractCString(const char_c * a_source, char_c * a_destination, const uint32_c a_destinationSize, const uint32_c index)
+    {
+      if (a_source == nullptr || a_destination == nullptr)
+      {
+        return;
+      }
+
+      for (uint32_c i = 0; i < a_destinationSize; i++)
+      {
+        if (a_source[i + index] == '\0')
+          break;
+
+        a_destination[i] = a_source[i + index];
+      }
+    }
+
+    inline char_c * CStringA::ReserveBytes(const size_c a_size) const
+    {
+      return new char_c[a_size]();
+    }
+
+    inline void CStringA::AssignCString(const char_c* a_string)
     {
       Clear();
 
       // nullptr
       if (a_string == nullptr)
-        return;
-      
+        return;    
+
       // get length of a_string
-      auto size = std::wcslen(a_string);
+      auto size = std::strlen(a_string);
 
       // check size result
       if (size == 0)
@@ -251,16 +287,16 @@ namespace Nully
       size++;
 
       // reserve bytes of length
-      this->m_data = this->ReserveWideBytes(size);
+      this->m_data = this->ReserveBytes(size);
 
       // copy a_string into m_data
       if (this->m_data != nullptr)
       {
-        wmemcpy(m_data, a_string, size);
+        memcpy(m_data, a_string, size);
       }
     }
 
-    inline void CStringW::Clear()
+    inline void CStringA::Clear()
     {
       if (m_data != nullptr)
       {
@@ -269,7 +305,7 @@ namespace Nully
       }
     }
 
-    inline CStringW operator+(const wchar_c * a_stringLeft, const CStringW & a_stringRight)
+    inline CStringA operator+(const char_c * a_stringLeft, const CStringA & a_stringRight)
     {
       return a_stringRight + (a_stringLeft);
     }

@@ -1,4 +1,4 @@
-#include "include\Core\CSocket.h"
+#include "CSocket.h"
 
 namespace Nully
 {
