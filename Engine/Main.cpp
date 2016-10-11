@@ -22,7 +22,7 @@ void InitApp()
 
 	CTestGame testGame;
 
-	CApplication::Run(appParams, &testGame);
+	ECoreResult result = CApplication::Run(appParams, &testGame);
 }
 
 void InitWindow()

@@ -10,7 +10,7 @@ ECoreResult CApplication::Run(const SAppParams& params, IGame* pGame)
 	ECoreResult result = ECoreResult::Success;
 
 	// Init Application
-	m_pInstance = new CApplication();
+	m_pInstance = new CApplication(pGame);
 	result = m_pInstance->Init(params);
 	if (result != ECoreResult::Success)
 	{
@@ -47,8 +47,9 @@ ECoreResult CApplication::Run(const SAppParams& params, IGame* pGame)
 	return ECoreResult::Success;
 }
 
-CApplication::CApplication()
-	: m_pWindow(nullptr)
+CApplication::CApplication(class IGame* pGame)
+	: m_pWindow(nullptr),
+		m_pGame(pGame)
 {
 }
 

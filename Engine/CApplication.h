@@ -24,15 +24,17 @@ namespace Nully
 		~CApplication();
 
 		Graphics::CWindow* GetWindow() { return m_pWindow; }
+		class IGame* GetGame() { return m_pGame; }
 
 	private:
-		CApplication();
+		CApplication(class IGame* pGame);
 		ECoreResult Init(const SAppParams& params);
 		ECoreResult Shutdown();
 
 	private:
 		static CApplication* m_pInstance;
 		Graphics::CWindow* m_pWindow;
+		class IGame* m_pGame;
 
 	};
 }
