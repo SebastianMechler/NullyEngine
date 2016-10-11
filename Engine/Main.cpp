@@ -1,9 +1,29 @@
 #include "Engine.h"
 
+#include "CTestGame.h"
+
+using namespace Nully;
 using namespace Nully::Math;
 using namespace Nully::Graphics;
 using namespace Nully::Level;
 using namespace std;
+
+void InitApp()
+{
+	SWindowParams wndParams = {};
+	wndParams.hInstance = GetModuleHandle(NULL);
+	wndParams.pTitle = "NullyEngine";
+	wndParams.pClassName = "NullyWndClassName";
+	wndParams.width = 800;
+	wndParams.height = 600;
+
+	SAppParams appParams = {};
+	appParams.pWindowParams = &wndParams;
+
+	CTestGame testGame;
+
+	CApplication::Run(appParams, &testGame);
+}
 
 void InitWindow()
 {
@@ -45,7 +65,8 @@ void main()
 {
   CMatrix4x4 matrix = CMatrix4x4::identity;
 
-	TestMaze();
-	InitWindow();
+	InitApp();
+	//TestMaze();
+	//InitWindow();
 }
 

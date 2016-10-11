@@ -29,6 +29,9 @@
 #include "CFileManager.h"
 #include "CSmartPointer.h"
 
-
 // Level
 #include "MazeDepthFirst.h"
+
+// Framework
+#include "CApplication.h"
+#include "IGame.h"
