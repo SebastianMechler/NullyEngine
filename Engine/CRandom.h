@@ -1,9 +1,6 @@
 #pragma once
 #include "Datatypes.h"
 
-#include <stdlib.h> // required for function: srand + rand
-#include <time.h> // required for function: timeGetTime
-
 namespace Nully
 {
   namespace Tools

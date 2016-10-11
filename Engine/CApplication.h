@@ -1,5 +1,9 @@
 #pragma once
-#include "Engine.h"
+#include "stdafx.h"
+#include "Datatypes.h"
+#include "ECoreResult.h"
+#include "CWindow.h"
+#include "IGame.h"
 
 namespace Nully
 {
@@ -12,19 +16,20 @@ namespace Nully
 	struct SAppParams
 	{
 		Graphics::SWindowParams* pWindowParams;
+		class IGame* pGame;
 	};
 
 	class CApplication
 	{
 	public:
-		static ECoreResult Run(const SAppParams& params, class IGame* pGame);
+		static ECoreResult Run(const SAppParams& params);
 		static CApplication* GetInstance() { return m_pInstance; }
 
 	public:
 		~CApplication();
 
-		Graphics::CWindow* GetWindow() { return m_pWindow; }
-		class IGame* GetGame() { return m_pGame; }
+		static Graphics::CWindow* GetWindow() { return m_pInstance->m_pWindow; }
+		static class IGame* GetGame() { return m_pInstance->m_pGame; }
 
 	private:
 		CApplication(class IGame* pGame);
@@ -34,7 +39,7 @@ namespace Nully
 	private:
 		static CApplication* m_pInstance;
 		Graphics::CWindow* m_pWindow;
-		class IGame* m_pGame;
+		IGame* m_pGame;
 
 	};
 }

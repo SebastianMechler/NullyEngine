@@ -1,23 +1,9 @@
 #include "CWindow.h"
 
+using namespace Nully;
 using namespace Nully::Graphics;
 
-CWindow* CWindow::m_pInstance;
-
-void CWindow::CreateInstance(const SWindowParams& params)
-{
-	m_pInstance = new CWindow(params);
-}
-
-void CWindow::DestroyInstance()
-{
-	delete m_pInstance;
-}
-
-CWindow* CWindow::GetInstance()
-{
-	return m_pInstance;
-}
+bool_c CWindow::m_quit;
 
 LRESULT CWindow::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -25,15 +11,27 @@ LRESULT CWindow::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_QUIT:
 	case WM_DESTROY:
-		CWindow::GetInstance()->m_quit = true;
+		CWindow::m_quit = true;
 		break;
 	}
 
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
-CWindow::CWindow(const SWindowParams& params)
+CWindow::CWindow()
 {
+	
+}
+
+CWindow::~CWindow()
+{
+	
+}
+
+ECoreResult CWindow::Init(const SWindowParams& params)
+{
+	ECoreResult result = ECoreResult::Success;
+
 	m_quit = false;
 	m_pClassName = params.pClassName;
 
@@ -50,7 +48,7 @@ CWindow::CWindow(const SWindowParams& params)
 	wndClass.lpszMenuName = NULL;
 	wndClass.lpszClassName = m_pClassName;
 	wndClass.hIconSm = NULL;
-	
+
 	RegisterClassEx(&wndClass);
 
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
@@ -70,12 +68,18 @@ CWindow::CWindow(const SWindowParams& params)
 		NULL);
 
 	ShowWindow(m_hwnd, SW_SHOW);
+
+	return result;
 }
 
-CWindow::~CWindow()
+ECoreResult CWindow::Shutdown()
 {
+	ECoreResult result = ECoreResult::Success;
+
 	DestroyWindow(m_hwnd);
 	UnregisterClass(m_pClassName, m_hInstance);
+
+	return result;
 }
 
 void CWindow::ProcessMessages()

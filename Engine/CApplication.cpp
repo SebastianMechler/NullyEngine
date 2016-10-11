@@ -5,49 +5,40 @@ using namespace Nully::Graphics;
 
 CApplication* CApplication::m_pInstance;
 
-ECoreResult CApplication::Run(const SAppParams& params, IGame* pGame)
+ECoreResult CApplication::Run(const SAppParams& params)
 {
 	ECoreResult result = ECoreResult::Success;
 
 	// Init Application
-	m_pInstance = new CApplication(pGame);
+	m_pInstance = new CApplication(params.pGame);
 	result = m_pInstance->Init(params);
 	if (result != ECoreResult::Success)
 	{
 		return result;
 	}
 
-	// Get Window
-	m_pInstance->m_pWindow = CWindow::GetInstance();
-	CWindow* pWindow = m_pInstance->m_pWindow;
-
-	// Init Game
-	pGame->Init();
-
 	// Start Loop
 	bool quit = false;
 	while (!quit)
 	{
 		// Process Windows Messages
-		pWindow->ProcessMessages();
-		quit = pWindow->GetQuit();
+		m_pInstance->m_pWindow->ProcessMessages();
+		quit = m_pInstance->m_pWindow->GetQuit();
 
 		// Update
-		pGame->Update(); // TODO: deltaTime
-
+		m_pInstance->m_pGame->Update(); // TODO: deltaTime
+		
 		// TOOD: Render
 
 	}
 
-	// Shutdown Game
-	pGame->Shutdown();
-	// Shutdown Application
+	// Shutdown
 	m_pInstance->Shutdown();
 
 	return ECoreResult::Success;
 }
 
-CApplication::CApplication(class IGame* pGame)
+CApplication::CApplication(IGame* pGame)
 	: m_pWindow(nullptr),
 		m_pGame(pGame)
 {
@@ -64,14 +55,20 @@ ECoreResult CApplication::Init(const SAppParams& params)
 		return ECoreResult::Nullptr;
 	}
 
-	CWindow::CreateInstance(*params.pWindowParams);
+	// Init Window
+	m_pWindow = new CWindow();
+	m_pWindow->Init(*params.pWindowParams);
+
+	// Init Game
+	m_pGame->Init();
 
 	return ECoreResult::Success;
 }
 
 ECoreResult CApplication::Shutdown()
 {
-	CWindow::DestroyInstance();
+	m_pGame->Shutdown();
+	m_pWindow->Shutdown();
 
 	return ECoreResult::Success;
 }

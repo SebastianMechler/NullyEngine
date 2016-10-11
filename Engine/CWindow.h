@@ -1,5 +1,7 @@
 #pragma once
-#include "Engine.h"
+#include "stdafx.h"
+#include "Datatypes.h"
+#include "ECoreResult.h"
 
 namespace Nully
 {
@@ -17,10 +19,6 @@ namespace Nully
 		class CWindow
 		{
 		public:
-			static void CreateInstance(const SWindowParams& params);
-			static void DestroyInstance();
-			static CWindow* GetInstance();
-
 			static LRESULT CALLBACK WindowProc(
 				HWND   hwnd,
 				UINT   uMsg,
@@ -29,14 +27,16 @@ namespace Nully
 				);
 
 		public:
-			CWindow(const SWindowParams& params);
+			CWindow();
 			virtual ~CWindow();
+
+			ECoreResult Init(const SWindowParams& params);
+			ECoreResult Shutdown();
 			void ProcessMessages();
 			bool_c GetQuit() { return m_quit; }
 
 		private:
-			static CWindow* m_pInstance;
-			bool m_quit;
+			static bool_c m_quit;
 			HINSTANCE m_hInstance;
 			HWND m_hwnd;
 			LPCSTR m_pClassName;

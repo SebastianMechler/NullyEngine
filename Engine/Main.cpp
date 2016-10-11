@@ -17,36 +17,37 @@ void InitApp()
 	wndParams.width = 800;
 	wndParams.height = 600;
 
-	SAppParams appParams = {};
-	appParams.pWindowParams = &wndParams;
-
 	CTestGame testGame;
 
-	ECoreResult result = CApplication::Run(appParams, &testGame);
+	SAppParams appParams = {};
+	appParams.pWindowParams = &wndParams;
+	appParams.pGame = &testGame;
+
+	ECoreResult result = CApplication::Run(appParams);
 }
 
-void InitWindow()
-{
-	SWindowParams wndParams = {};
-	wndParams.hInstance = GetModuleHandle(NULL);
-	wndParams.pTitle = "NullyEngine";
-	wndParams.pClassName = "NullyWndClassName";
-	wndParams.width = 800;
-	wndParams.height = 600;
-	CWindow::CreateInstance(wndParams);
-
-	bool quit = false;
-	while (!quit)
-	{
-		CWindow::GetInstance()->ProcessMessages();
-		quit = CWindow::GetInstance()->GetQuit();
-
-		// Update
-		// Render
-	}
-
-	CWindow::DestroyInstance();
-}
+//void InitWindow()
+//{
+//	SWindowParams wndParams = {};
+//	wndParams.hInstance = GetModuleHandle(NULL);
+//	wndParams.pTitle = "NullyEngine";
+//	wndParams.pClassName = "NullyWndClassName";
+//	wndParams.width = 800;
+//	wndParams.height = 600;
+//	CWindow::CreateInstance(wndParams);
+//
+//	bool quit = false;
+//	while (!quit)
+//	{
+//		CWindow::GetInstance()->ProcessMessages();
+//		quit = CWindow::GetInstance()->GetQuit();
+//
+//		// Update
+//		// Render
+//	}
+//
+//	CWindow::DestroyInstance();
+//}
 
 void TestMaze()
 {
