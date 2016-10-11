@@ -1,7 +1,6 @@
 #pragma once
-
+#include "stdafx.h"
 #include "Datatypes.h"
-#include <Windows.h>
 
 namespace Nully
 {

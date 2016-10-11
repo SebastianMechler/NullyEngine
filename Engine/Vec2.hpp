@@ -1,5 +1,5 @@
 #pragma once
-
+#include "stdafx.h"
 #include "Vec2.h"
 
 namespace Nully
@@ -24,7 +24,7 @@ namespace Nully
 
 		inline Vec2::~Vec2()
 		{
-
+			
 		}
 
 		//------------------------------------------------------------------------------------------//

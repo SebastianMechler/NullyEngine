@@ -1,7 +1,6 @@
 #pragma once
 #include "stdafx.h"
-#include "Datatypes.h"
-#include "ECoreResult.h"
+#include "EngineIntern.h"
 
 namespace Nully
 {

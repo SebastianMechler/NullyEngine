@@ -1,9 +1,7 @@
 #pragma once
-
+#include "stdafx.h"
+#include "EngineIntern.h"
 #include "NetworkTypes.h"
-
-#include "Datatypes.h"
-#include "ECoreResult.h"
 
 namespace Nully
 {

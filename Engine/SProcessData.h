@@ -1,9 +1,7 @@
 #pragma once
-
+#include "stdafx.h"
 #include "Datatypes.h"
 #include "CString.h"
-
-#include <string>
 
 namespace Nully
 {

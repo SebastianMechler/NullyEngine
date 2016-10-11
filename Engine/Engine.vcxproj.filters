@@ -98,6 +98,9 @@
     <ClCompile Include="CTestGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datatypes.h">
@@ -120,12 +123,6 @@
     </ClInclude>
     <ClInclude Include="CProcess.hpp">
       <Filter>Header Files\Hacking</Filter>
-    </ClInclude>
-    <ClInclude Include="CSmartPointer.h">
-      <Filter>Header Files\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="CSmartPointer.hpp">
-      <Filter>Header Files\Tools</Filter>
     </ClInclude>
     <ClInclude Include="CSocket.h">
       <Filter>Header Files\Network</Filter>
@@ -200,6 +197,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CTestGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineIntern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

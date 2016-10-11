@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CVector3.h"
 
 namespace Nully

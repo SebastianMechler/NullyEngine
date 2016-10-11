@@ -1,6 +1,6 @@
 #pragma once
-
-#include "Datatypes.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
 
 #include "CVector3.h"
 #include "CVector4.h"

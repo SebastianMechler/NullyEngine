@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CProcess.h"
 #include "CFileManager.h"
 

@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "MazeDepthFirst.h"
 
 using namespace Nully::Level;

@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CApplication.h"
 
 using namespace Nully;

@@ -1,5 +1,6 @@
 #pragma once
-#include "Datatypes.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
 
 namespace Nully
 {

@@ -1,6 +1,5 @@
+#include "stdafx.h"
 #include "CRandom.h"
-#include <stdlib.h> // required for function: srand + rand
-#include <time.h> // required for function: timeGetTime
 
 namespace Nully
 {

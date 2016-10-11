@@ -1,5 +1,7 @@
 #pragma once
-#include "Engine.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
+#include "MathUtility.h"
 
 namespace Nully
 {

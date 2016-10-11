@@ -1,8 +1,6 @@
 #pragma once
-
-#include <iostream>
-
-#include "Datatypes.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
 
 ///@todo if a string has 10 bytes reserverd and new string with 7 characters is assigned there is no need to reallocate memory, instead use the current one
 

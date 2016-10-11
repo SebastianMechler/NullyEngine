@@ -1,5 +1,4 @@
 #pragma once
-
 #include "stdafx.h"
 
 // Core-Related
@@ -27,7 +26,6 @@
 // Tools
 #include "CString.h"
 #include "CFileManager.h"
-#include "CSmartPointer.h"
 
 // Level
 #include "MazeDepthFirst.h"

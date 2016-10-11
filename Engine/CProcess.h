@@ -1,11 +1,6 @@
 #pragma once
-#include <Windows.h>
-#include <Psapi.h> // EnumProcessModules
-#include <vector>
-#include <algorithm> // sorting
-
-#include "Datatypes.h"
-#include "ECoreResult.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
 #include "SProcessData.h"
 #include "EAllocationType.h"
 #include "EProtectionType.h"

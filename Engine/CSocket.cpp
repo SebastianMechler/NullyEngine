@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CSocket.h"
 
 namespace Nully

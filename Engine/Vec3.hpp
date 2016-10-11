@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 #include "Vec3.h"
 
 namespace Nully

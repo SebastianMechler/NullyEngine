@@ -3,6 +3,9 @@
 // Windows includes
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
+#include <Psapi.h> // EnumProcessModules
+#include <WinSock2.h>
+#include <Ws2tcpip.h>
 
 // DirectX includes
 #include <d3d11.h>
@@ -21,5 +24,9 @@
 #include <map>
 #include <stack>
 #include <cassert>
+#include <cmath>
+#include <stdlib.h> // required for function: srand + rand
+#include <time.h> // required for function: timeGetTime
 
-
+// Linker
+#pragma comment(lib, "Ws2_32.lib")

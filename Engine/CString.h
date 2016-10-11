@@ -1,5 +1,5 @@
 #pragma once
-
+#include "stdafx.h"
 #include "CStringA.h"
 #include "CStringW.h"
 

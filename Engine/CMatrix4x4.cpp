@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CMatrix4x4.h"
 
 namespace Nully

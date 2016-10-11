@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CWindow.h"
 
 using namespace Nully;

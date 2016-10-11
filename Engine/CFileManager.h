@@ -1,10 +1,7 @@
 #pragma once
-#include <iostream>
-#include <Windows.h>
-
-#include "Datatypes.h"
+#include "stdafx.h"
+#include "EngineIntern.h"
 #include "EFileMode.h"
-#include "ECoreResult.h"
 #include "CString.h"
 #include "EFilePosition.h"
 

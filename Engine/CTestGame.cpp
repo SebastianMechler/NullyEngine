@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CTestGame.h"
 
 using namespace std;
