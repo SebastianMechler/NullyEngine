@@ -5,6 +5,10 @@
 #include "CVector3.h"
 #include "CVector4.h"
 
+#include "Vec2.h"
+#include "Vec3.h"
+#include "Vec4.h"
+
 namespace Nully
 {
   namespace Math
@@ -100,16 +104,36 @@ namespace Nully
 ////=======================================================================
 
 /// @brief Matrix4x4 * Matrix4x4 multiplication.
-Nully::Math::CMatrix4x4 operator*(const Nully::Math::CMatrix4x4& a_matrix1, const Nully::Math::CMatrix4x4& a_matrix2);
+inline Nully::Math::CMatrix4x4 operator*(const Nully::Math::CMatrix4x4& a_matrix1, const Nully::Math::CMatrix4x4& a_matrix2);
 
 /// @brief Matrix4x4 * Vector3 multiplication.
-Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector3& a_vector);
+inline Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector3& a_vector);
 
 /// @brief Vector3 * Matrix4x4 multiplication.
-Nully::Math::CVector4 operator*(const Nully::Math::CVector3& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+inline Nully::Math::CVector4 operator*(const Nully::Math::CVector3& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
 
 /// @brief Matrix4x4 * Vector4 multiplication.
-Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector4& a_vector);
+inline Nully::Math::CVector4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::CVector4& a_vector);
 
 /// @brief Vector4 * Matrix4x4 multiplication.
-Nully::Math::CVector4 operator*(const Nully::Math::CVector4& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+inline Nully::Math::CVector4 operator*(const Nully::Math::CVector4& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+
+/// @brief Vector2 * Matrix4x4 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::Vec2& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+
+/// @brief Matrix4x4 * Vector2 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::Vec2& a_vector);
+
+/// @brief Vector3 * Matrix4x4 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::Vec3& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+
+/// @brief Matrix4x4 * Vector3 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::Vec3& a_vector);
+
+/// @brief Vector4 * Matrix4x4 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::Vec4& a_vector, const Nully::Math::CMatrix4x4& a_matrix);
+
+/// @brief Matrix4x4 * Vector4 multiplication.
+inline Nully::Math::Vec4 operator*(const Nully::Math::CMatrix4x4& a_matrix, const Nully::Math::Vec4& a_vector);
+
+#include "CMatrix4x4.hpp"

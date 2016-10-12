@@ -9,6 +9,7 @@
 #include "MathUtility.h"
 #include "Vec2.h"
 #include "Vec3.h"
+#include "Vec4.h"
 #include "CVector3.h"
 #include "CMatrix4x4.h"
 #include "CRandom.h"

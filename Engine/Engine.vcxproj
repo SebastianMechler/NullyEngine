@@ -44,6 +44,7 @@
   <ItemGroup>
     <ClInclude Include="CFileManager.h" />
     <ClInclude Include="CMatrix4x4.h" />
+    <ClInclude Include="CMatrix4x4.hpp" />
     <ClInclude Include="CProcess.h" />
     <ClInclude Include="CProcess.hpp" />
     <ClInclude Include="CRandom.h" />
@@ -75,6 +76,8 @@
     <ClInclude Include="Vec2.hpp" />
     <ClInclude Include="Vec3.h" />
     <ClInclude Include="Vec3.hpp" />
+    <ClInclude Include="Vec4.h" />
+    <ClInclude Include="Vec4.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{321B82F1-014C-418C-AA33-90ED944ADAB9}</ProjectGuid>
