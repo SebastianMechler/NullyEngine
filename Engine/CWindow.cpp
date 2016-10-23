@@ -14,6 +14,9 @@ LRESULT CWindow::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		CWindow::m_quit = true;
 		break;
+	case WM_SIZE:
+		
+		break;
 	}
 
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
@@ -34,6 +37,7 @@ ECoreResult CWindow::Init(const SWindowParams& params)
 	ECoreResult result = ECoreResult::Success;
 
 	m_quit = false;
+	m_params = params;
 	m_pClassName = params.pClassName;
 
 	WNDCLASSEX wndClass = {};
@@ -55,19 +59,38 @@ ECoreResult CWindow::Init(const SWindowParams& params)
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
+	RECT r;
+	r.right = params.width;
+	r.bottom = params.height;
+	r.top = 0;
+	r.left = 0;
+	AdjustWindowRectEx(&r, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW);
+
+	DWORD wndStyle;
+	if (params.resizable)
+	{
+		wndStyle = WS_OVERLAPPEDWINDOW;
+	}
+	else
+	{
+		wndStyle = WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME ^ WS_MAXIMIZEBOX;
+	}
+
 	m_hwnd = CreateWindowEx(WS_EX_OVERLAPPEDWINDOW,
 		wndClass.lpszClassName,
 		params.pTitle,
-		WS_OVERLAPPEDWINDOW,
+		wndStyle,
 		screenWidth / 4,
 		screenHeight / 4,
-		params.width,
-		params.height,
+		r.right - r.left,
+		r.bottom - r.top,
 		NULL,
 		NULL,
 		params.hInstance,
 		NULL);
 
+	GetClientRect(m_hwnd, &m_rect);
+	
 	ShowWindow(m_hwnd, SW_SHOW);
 
 	return result;
@@ -88,14 +111,20 @@ void CWindow::ProcessMessages()
 	MSG msg;
 	BOOL ret;
 
-	do
+	while (ret = PeekMessage(&msg, m_hwnd, NULL, NULL, PM_REMOVE) != 0)
 	{
-		ret = PeekMessage(&msg, m_hwnd, NULL, NULL, PM_REMOVE);
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+}
 
-		if (ret != 0)
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-	} while (ret != 0);
+void CWindow::Resize(uint32_c width, uint32_c height)
+{
+	// Adjust Window Params
+	m_params.width = width;
+	m_params.height = height;
+
+	// Reinitialize Window
+	Shutdown();
+	Init(m_params);
 }

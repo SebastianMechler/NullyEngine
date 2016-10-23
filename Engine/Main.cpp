@@ -17,6 +17,7 @@ void InitApp()
 	wndParams.pClassName = "NullyWndClassName";
 	wndParams.width = 800;
 	wndParams.height = 600;
+	wndParams.resizable = false;
 
 	CTestGame testGame;
 
