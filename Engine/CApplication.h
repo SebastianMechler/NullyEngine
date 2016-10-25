@@ -6,15 +6,13 @@
 
 namespace Nully
 {
-	namespace Graphics
-	{
-		class CWindow;
-		struct SWindowParams;
-	}
+	class CWindow;
+	struct SWindowParams;
 
 	struct SAppParams
 	{
-		Graphics::SWindowParams* pWindowParams;
+		SWindowParams* pWindowParams;
+		SGraphicsParams* pGraphicsParams;
 		class IGame* pGame;
 	};
 
@@ -27,7 +25,7 @@ namespace Nully
 	public:
 		~CApplication();
 
-		static Graphics::CWindow* GetWindow() { return m_pInstance->m_pWindow; }
+		static CWindow* GetWindow() { return m_pInstance->m_pWindow; }
 		static class IGame* GetGame() { return m_pInstance->m_pGame; }
 
 	private:
@@ -37,7 +35,8 @@ namespace Nully
 
 	private:
 		static CApplication* m_pInstance;
-		Graphics::CWindow* m_pWindow;
+		CWindow* m_pWindow;
+		IGraphics* m_pGraphics;
 		IGame* m_pGame;
 
 	};

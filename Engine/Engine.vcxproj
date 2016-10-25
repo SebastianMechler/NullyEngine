@@ -31,7 +31,10 @@
     <ClCompile Include="CVector4.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="CApplication.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="CGraphicsDX11.cpp" />
     <ClCompile Include="IGame.cpp" />
+    <ClCompile Include="IGraphics.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MazeDepthFirst.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -65,7 +68,10 @@
     <ClInclude Include="EngineIntern.h" />
     <ClInclude Include="EProtectionType.h" />
     <ClInclude Include="CApplication.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="CGraphicsDX11.h" />
     <ClInclude Include="IGame.h" />
+    <ClInclude Include="IGraphics.h" />
     <ClInclude Include="ISocket.h" />
     <ClInclude Include="MathUtility.h" />
     <ClInclude Include="MazeDepthFirst.h" />

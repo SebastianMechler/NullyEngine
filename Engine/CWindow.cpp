@@ -2,7 +2,6 @@
 #include "CWindow.h"
 
 using namespace Nully;
-using namespace Nully::Graphics;
 
 bool_c CWindow::m_quit;
 

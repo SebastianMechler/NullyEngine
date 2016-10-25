@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "CApplication.h"
+#include "IGraphics.h"
+#include "CGraphicsDX11.h"
 
 using namespace Nully;
-using namespace Nully::Graphics;
 
 CApplication* CApplication::m_pInstance;
 
@@ -29,7 +30,7 @@ ECoreResult CApplication::Run(const SAppParams& params)
 		// Update
 		m_pInstance->m_pGame->Update(); // TODO: deltaTime
 		
-		// TOOD: Render
+		// TODO: Render
 
 	}
 
@@ -56,11 +57,12 @@ ECoreResult CApplication::Init(const SAppParams& params)
 		return ECoreResult::Nullptr;
 	}
 
-	// Init Window
 	m_pWindow = new CWindow();
 	m_pWindow->Init(*params.pWindowParams);
 
-	// Init Game
+	m_pGraphics = new CGraphicsDX11();
+	m_pGraphics->Init(*params.pGraphicsParams);
+
 	m_pGame->Init();
 
 	return ECoreResult::Success;
@@ -69,6 +71,7 @@ ECoreResult CApplication::Init(const SAppParams& params)
 ECoreResult CApplication::Shutdown()
 {
 	m_pGame->Shutdown();
+	m_pGraphics->Shutdown();
 	m_pWindow->Shutdown();
 
 	return ECoreResult::Success;

@@ -16,6 +16,8 @@
 
 // Graphics
 #include "CWindow.h"
+#include "IGraphics.h"
+#include "CGraphicsDX11.h"
 
 // Network
 #include "CSocket.h"

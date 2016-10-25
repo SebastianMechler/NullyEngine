@@ -3,7 +3,6 @@
 
 using namespace std;
 using namespace Nully;
-using namespace Nully::Graphics;
 
 CTestGame::CTestGame()
 {

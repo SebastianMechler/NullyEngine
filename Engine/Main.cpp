@@ -5,7 +5,6 @@
 
 using namespace Nully;
 using namespace Nully::Math;
-using namespace Nully::Graphics;
 using namespace Nully::Level;
 using namespace std;
 
@@ -19,11 +18,18 @@ void InitApp()
 	wndParams.height = 600;
 	wndParams.resizable = false;
 
+	SGraphicsParams graphicsParams = {};
+	graphicsParams.width = wndParams.width;
+	graphicsParams.height = wndParams.height;
+	graphicsParams.vsyncEnabled = false;
+	graphicsParams.fullscreenEnabled = false;
+
 	CTestGame testGame;
 
 	SAppParams appParams = {};
 	appParams.pWindowParams = &wndParams;
 	appParams.pGame = &testGame;
+	appParams.pGraphicsParams = &graphicsParams;
 
 	ECoreResult result = CApplication::Run(appParams);
 }
