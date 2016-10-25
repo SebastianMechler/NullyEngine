@@ -16,7 +16,7 @@ namespace Nully
 
 	void CGraphicsDX11::Init(const SGraphicsParams& params)
 	{
-		HRESULT hr;
+		HRESULT hr = S_OK;
 
 		CWindow* pWindow = CApplication::GetWindow();
 		assert(pWindow);
@@ -174,6 +174,13 @@ namespace Nully
 		SafeRelease(m_pDepthStencilState);
 		SafeRelease(m_pDepthStencilView);
 		SafeRelease(m_pRasterizerState);
+	}
+
+	CMaterial* CGraphicsDX11::LoadMaterial(const std::wstring& file)
+	{
+		CMaterial* pMaterial = new CMaterial();
+		pMaterial->Load(file);
+		return pMaterial;
 	}
 
 }

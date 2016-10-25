@@ -110,6 +110,9 @@
     <ClCompile Include="CGraphicsDX11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datatypes.h">
@@ -227,6 +230,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CGraphicsDX11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

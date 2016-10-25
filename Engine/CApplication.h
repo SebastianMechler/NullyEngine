@@ -25,6 +25,7 @@ namespace Nully
 	public:
 		~CApplication();
 
+		static IGraphics* GetGraphics() { return m_pInstance->m_pGraphics; }
 		static CWindow* GetWindow() { return m_pInstance->m_pWindow; }
 		static class IGame* GetGame() { return m_pInstance->m_pGame; }
 

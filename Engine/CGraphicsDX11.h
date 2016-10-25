@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "EngineIntern.h"
 #include "IGraphics.h"
+#include "CMaterial.h"
 
 namespace Nully
 {
@@ -13,6 +14,8 @@ namespace Nully
 
 		void Init(const SGraphicsParams& params) override;
 		void Shutdown() override;
+
+		CMaterial* LoadMaterial(const std::wstring& file);
 
 		IDXGISwapChain* GetSwapChain() { return m_pSwapChain; }
 		ID3D11Device* GetDevice() { return m_pDevice; }
