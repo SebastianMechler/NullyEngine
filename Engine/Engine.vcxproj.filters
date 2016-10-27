@@ -113,7 +113,7 @@
     <ClCompile Include="CMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
+    <ClCompile Include="CMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -238,7 +238,7 @@
     <ClInclude Include="CMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="CMesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
