@@ -188,7 +188,7 @@ namespace Nully
 		const FLOAT clearColor[4] = { 0.25f, 0.5f, 0.75f, 1.0f };
 		m_pDeviceContext->ClearRenderTargetView(m_pRenderTargetView, clearColor);
 		UINT clearFlags = D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL;
-		m_pDeviceContext->ClearDepthStencilView(m_pDepthStencilView, clearFlags, 1.0f, 1);
+		m_pDeviceContext->ClearDepthStencilView(m_pDepthStencilView, clearFlags, 1.0f, 0);
 
 		// TODO: m_pDeviceContext->DrawIndexed()
 		
