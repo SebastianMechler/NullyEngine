@@ -37,7 +37,7 @@
     <ClCompile Include="IGraphics.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="CMaterial.cpp" />
-    <ClCompile Include="MazeDepthFirst.cpp" />
+    <ClCompile Include="CMazeDepthFirst.cpp" />
     <ClCompile Include="CMesh.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -77,7 +77,7 @@
     <ClInclude Include="ISocket.h" />
     <ClInclude Include="CMaterial.h" />
     <ClInclude Include="MathUtility.h" />
-    <ClInclude Include="MazeDepthFirst.h" />
+    <ClInclude Include="CMazeDepthFirst.h" />
     <ClInclude Include="CMesh.h" />
     <ClInclude Include="NetworkTypes.h" />
     <ClInclude Include="SProcessData.h" />

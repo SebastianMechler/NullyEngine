@@ -8,12 +8,9 @@
 
 namespace Nully
 {
-	namespace Math
+	template<typename T>
+	inline T clamp(T value, T min, T max)
 	{
-		template<typename T>
-		inline T clamp(T value, T min, T max)
-		{
-			return value < min ? min : (value > max ? max : value);
-		}
+		return value < min ? min : (value > max ? max : value);
 	}
 }

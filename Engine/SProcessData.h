@@ -5,12 +5,9 @@
 
 namespace Nully
 {
-  namespace Hacking
+  struct SProcessData
   {
-    struct SProcessData
-    {
-      uint32_c id;
-      Nully::Tools::CStringA name;
-    };
-  }
+    uint32_c id;
+    Nully::CStringA name;
+  };
 }

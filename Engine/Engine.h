@@ -31,7 +31,7 @@
 #include "CFileManager.h"
 
 // Level
-#include "MazeDepthFirst.h"
+#include "CMazeDepthFirst.h"
 
 // Framework
 #include "CApplication.h"

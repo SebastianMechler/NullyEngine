@@ -4,8 +4,6 @@
 #include "CTestGame.h"
 
 using namespace Nully;
-using namespace Nully::Math;
-using namespace Nully::Level;
 using namespace std;
 
 void InitApp()

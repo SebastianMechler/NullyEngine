@@ -162,6 +162,12 @@ namespace Nully
 		viewPort.TopLeftX = 0.0f;
 		viewPort.TopLeftY = 0.0f;
 		m_pDeviceContext->RSSetViewports(1, &viewPort);
+
+		//---------------------------------------------
+		// Set Primitive Topology to TriangleStrip
+		//---------------------------------------------
+
+		m_pDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 	}
 
 	void CGraphicsDX11::Shutdown()

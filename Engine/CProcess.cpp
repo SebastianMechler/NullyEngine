@@ -4,8 +4,6 @@
 
 namespace Nully
 {
-  namespace Hacking
-  {
     CProcess::CProcess()
       : m_processHandle(nullptr), m_processID(0)
     {
@@ -160,9 +158,9 @@ namespace Nully
         return ECoreResult::Nullptr;
       }
 
-      Nully::Tools::CFileManager fileManager;
+      Nully::CFileManager fileManager;
       
-      fileManager.Open(a_path, Nully::Tools::EFileMode::Write);
+      fileManager.Open(a_path, Nully::EFileMode::Write);
       
       /*
       // sort vector
@@ -244,8 +242,8 @@ namespace Nully
 
         GetProcessImageFileName(process, &processName[0], MAX_PATH);
         
-        int32_c index = Nully::Tools::CStringA::FindLast(processName, '\\');
-        Nully::Tools::CStringA::ExtractCString(processName, extractedProcessName, sizeof(extractedProcessName), index + 1);
+        int32_c index = Nully::CStringA::FindLast(processName, '\\');
+        Nully::CStringA::ExtractCString(processName, extractedProcessName, sizeof(extractedProcessName), index + 1);
 
         // Release the handle to the process.
         CloseHandle(process);
@@ -269,7 +267,6 @@ namespace Nully
       }
       return processList;
     }
-  }
 }
 
 
