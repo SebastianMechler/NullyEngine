@@ -6,9 +6,6 @@ namespace Nully
 {
 	struct SGraphicsParams
 	{
-		uint32_c width;
-		uint32_c height;
-		bool_c fullscreenEnabled;
 		bool_c vsyncEnabled;
 	};
 
@@ -17,6 +14,7 @@ namespace Nully
 	public:
 		virtual void Init(const SGraphicsParams& params) = 0;
 		virtual void Shutdown() = 0;
+		virtual void Render() = 0;
 
 	protected:
 

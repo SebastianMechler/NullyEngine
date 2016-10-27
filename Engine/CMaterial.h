@@ -10,7 +10,7 @@ namespace Nully
 		CMaterial();
 		~CMaterial();
 
-		void Load(const std::wstring& file);
+		void Load(const std::wstring& filename);
 		
 		// TODO: Functions to Set Buffer Data
 

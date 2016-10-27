@@ -14,8 +14,9 @@ namespace Nully
 
 		void Init(const SGraphicsParams& params) override;
 		void Shutdown() override;
+		void Render() override;
 
-		CMaterial* LoadMaterial(const std::wstring& file);
+		CMaterial* LoadMaterial(const std::wstring& filename);
 
 		IDXGISwapChain* GetSwapChain() { return m_pSwapChain; }
 		ID3D11Device* GetDevice() { return m_pDevice; }

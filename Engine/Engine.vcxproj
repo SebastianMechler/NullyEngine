@@ -38,6 +38,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="CMaterial.cpp" />
     <ClCompile Include="MazeDepthFirst.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -77,6 +78,7 @@
     <ClInclude Include="CMaterial.h" />
     <ClInclude Include="MathUtility.h" />
     <ClInclude Include="MazeDepthFirst.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="NetworkTypes.h" />
     <ClInclude Include="SProcessData.h" />
     <ClInclude Include="stdafx.h" />

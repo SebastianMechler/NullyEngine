@@ -20,6 +20,11 @@ void Nully::CTestGame::Init()
 	CTestGame* pTestGame = dynamic_cast<CTestGame*>(pGame);
 
 	CWindow* pWindow = CApplication::GetWindow();
+	CGraphicsDX11* pGraphicsDX11 = (CGraphicsDX11*)CApplication::GetGraphics();
+
+	CMaterial* pMaterial = pGraphicsDX11->LoadMaterial(L"shader/basic.hlsl");
+	if (pMaterial)
+		delete pMaterial;
 }
 
 void Nully::CTestGame::Shutdown()
@@ -29,5 +34,7 @@ void Nully::CTestGame::Shutdown()
 
 void Nully::CTestGame::Update()
 {
-	cout << "CTestGame::Update()" << endl;
+	//cout << "CTestGame::Update()" << endl;
+
+	
 }

@@ -30,8 +30,8 @@ ECoreResult CApplication::Run(const SAppParams& params)
 		// Update
 		m_pInstance->m_pGame->Update(); // TODO: deltaTime
 		
-		// TODO: Render
-
+		// Render
+		m_pInstance->m_pGraphics->Render();
 	}
 
 	// Shutdown
