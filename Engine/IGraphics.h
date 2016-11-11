@@ -16,6 +16,7 @@ namespace Nully
 		virtual void Shutdown() = 0;
 		virtual void Render() = 0;
 
+    virtual ~IGraphics() {};
 	protected:
 
 	};

@@ -12,5 +12,14 @@ namespace Nully
 		}
 	}
 
+  template<typename T> void SafeDelete(T*& pObj)
+  {
+    if (pObj != nullptr)
+    {
+      delete pObj;
+      pObj = nullptr;
+    }
+  }
+
 	bool Failed(HRESULT aResult);
 }

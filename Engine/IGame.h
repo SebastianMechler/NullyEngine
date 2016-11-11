@@ -7,8 +7,7 @@ namespace Nully
 	class IGame
 	{
 	public:
-		IGame();
-		virtual ~IGame();
+    virtual ~IGame() {};
 
 		virtual void Init() = 0;
 		virtual void Shutdown() = 0;

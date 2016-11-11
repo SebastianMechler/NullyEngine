@@ -36,6 +36,7 @@ ECoreResult CApplication::Run(const SAppParams& params)
 
 	// Shutdown
 	m_pInstance->Shutdown();
+  SafeDelete(m_pInstance);
 
 	return ECoreResult::Success;
 }
@@ -73,6 +74,9 @@ ECoreResult CApplication::Shutdown()
 	m_pGame->Shutdown();
 	m_pGraphics->Shutdown();
 	m_pWindow->Shutdown();
+
+  SafeDelete(m_pGraphics);
+  SafeDelete(m_pWindow);
 
 	return ECoreResult::Success;
 }
