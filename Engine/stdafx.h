@@ -27,6 +27,7 @@
 #include <cmath>
 #include <stdlib.h> // required for function: srand + rand
 #include <time.h> // required for function: timeGetTime
+#include <memory> // required for: unique_ptr
 
 // Linker
 #pragma comment(lib, "Ws2_32.lib")

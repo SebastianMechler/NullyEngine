@@ -29,6 +29,7 @@
 // Tools
 #include "CString.h"
 #include "CFileManager.h"
+#include "CObj.h"
 
 // Level
 #include "CMazeDepthFirst.h"

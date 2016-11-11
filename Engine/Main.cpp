@@ -8,6 +8,9 @@ using namespace std;
 
 void InitApp()
 {
+  CObj obj = CObj("sphere.obj");
+
+  
 	SWindowParams wndParams = {};
 	wndParams.hInstance = GetModuleHandle(NULL);
 	wndParams.pTitle = "NullyEngine";

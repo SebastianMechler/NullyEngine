@@ -116,6 +116,9 @@
     <ClCompile Include="CMazeDepthFirst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datatypes.h">
@@ -239,6 +242,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CMazeDepthFirst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SObjFace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EObjDataType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
